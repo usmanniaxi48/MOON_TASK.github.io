@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon - Modern To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1><i class="fas fa-moon"></i> Moon Tasks</h1>
+            <p>Your modern task management solution</p>
+        </header>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <div class="progress-info">
+                <span class="progress-text" id="progressText">0% Complete</span>
+                <span class="tasks-count" id="tasksCount">0 tasks</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <!-- Filter and Search Section -->
+        <div class="filter-section">
+            <div class="filter-group">
+                <select id="categoryFilter" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="work">Work</option>
+                    <option value="study">Study</option>
+                    <option value="personal">Personal</option>
+                </select>
+                <select id="priorityFilter" class="filter-select">
+                    <option value="all">All Priorities</option>
+                    <option value="high">High Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="low">Low Priority</option>
+                </select>
+            </div>
+            <div class="search-group">
+                <input type="text" id="searchInput" placeholder="Search tasks..." class="search-input">
+                <button id="clearFiltersBtn" class="filter-btn">
+                    <i class="fas fa-times"></i> Clear Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Task Input Section -->
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="What needs to be done?">
+                <div class="input-controls">
+                    <select id="prioritySelect" class="priority-select">
+                        <option value="low">Low Priority</option>
+                        <option value="medium" selected>Medium Priority</option>
+                        <option value="high">High Priority</option>
+                    </select>
+                    <select id="categorySelect" class="category-select">
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                        <option value="personal" selected>Personal</option>
+                    </select>
+                    <input type="date" id="dueDateInput" class="due-date-input">
+                    <button id="addTaskBtn" class="add-task-btn">
+                        <i class="fas fa-plus"></i> Add Task
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list-container">
+            <ul id="taskList" class="task-list"></ul>
+            <div class="empty-state" id="emptyState">
+                <i class="fas fa-clipboard-list"></i>
+                <h3>No tasks yet</h3>
+                <p>Add your first task to get started!</p>
+            </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <div class="theme-section">
+            <button id="toggleThemeBtn" class="theme-toggle-btn" aria-pressed="false" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
